@@ -1,0 +1,41 @@
+
+.circle{
+    width:  200px;
+    height: 200px;
+    border-radius: 50%;
+    background: brown;
+    position: relative;
+}
+.circle::before, .circle::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 40px;
+    border-radius: 50%;
+    background: #000;
+    top: 40px;
+    animation: eye 1.5s ease-in-out infinite;
+   }
+.circle::before { left: 55px; }
+.circle::after { right: 55px; }
+.circle:hover{
+    animation-name: negr;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state:running;
+   
+}
+@keyframes negr{
+    0%{
+        transform: 0;
+    }
+    100%{
+        transform: translateX(calc(90vw - 210px)) rotate(360deg);
+    }
+}
+@keyframes eye {
+    90% { transform: none; }   
+    95% { transform: scaleY(0.1); }
+   }
